@@ -1,4 +1,0 @@
-Options +FollowSymLinks
-RewriteEngine on
-RewriteCond $1 !^(index\.php|docs|assets|robots\.txt)
-RewriteRule ^(.*)$ index.php/$1 [L]

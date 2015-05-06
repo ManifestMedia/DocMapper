@@ -1,2 +1,2 @@
 # DocMapper
-PHP wrapper around Flatdoc library that helps managing multiple documentation stacks on the same server
+PHP wrapper around Flatdoc library that helps manage multiple documentation stacks on the same server

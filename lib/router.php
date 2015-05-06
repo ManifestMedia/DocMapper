@@ -34,7 +34,7 @@ class Router{
 			 $this->docs_foldername = $this->url[0];
 		}
 		else{
-			$this->docs_foldername = "manifest";
+			$this->docs_foldername = "docMapper";
 		}
 	}
 

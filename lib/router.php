@@ -6,6 +6,7 @@ class Router{
 	protected $method;
 	protected $args;
 	protected $lib;
+	protected $doc_folder;
 
 	function __construct(){
   	$http = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) !== 'off' ? 'https' : 'http';
@@ -13,6 +14,7 @@ class Router{
 		$this->base_url = $http . '://' . $_SERVER['HTTP_HOST'] . '/';
 		$this->root = realpath($_SERVER["DOCUMENT_ROOT"]).'/';
 		$this->lib = 'lib/';
+		$this->doc_folder = 'docs/';
 	}
 
 	function __get_url(){
@@ -55,7 +57,7 @@ class Router{
 	}
 
 	function load_template() {
-		$this->docs_filepath = 'docs/'.$this->docs_foldername.'/'.$this->docs_filename.'.md';
+		$this->doc_url = $this->base_url.$this->doc_folder.$this->docs_foldername.'/'.$this->docs_filename.'.md';
 		require_once($this->root.$this->lib.'template.php');
 	}
 

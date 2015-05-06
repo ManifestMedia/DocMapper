@@ -20,12 +20,11 @@
 
   <!-- Initializer -->
   <script>
-    var docs_file = '<?php echo 'http://docmapper.dev/'.$this->docs_filepath ?>'
+    var docs_file = '<?php echo $this->doc_url ?>'
     Flatdoc.run({
       fetcher: Flatdoc.file(docs_file)
     });
   </script>
-
 </head>
 
 <body role='flatdoc'>
@@ -34,7 +33,7 @@
     <div class='left'>
       <h1><?php echo ucwords($this->docs_foldername) ?> Documentation</h1>
       <ul>
-        <!-- foreach file in view docs generate link -->
+        <!-- Generates menu from file names in docs/project_name/ -->
         <?php foreach(get_links($this->docs_foldername) as $link): ?>
           <li>
             <a href="<?php echo base_url($link['href'])?>"><?php echo $link['title'] ?></a>
@@ -43,8 +42,7 @@
       </ul>
     </div>
     <div class='right'>
-      <!-- GitHub buttons: see http://ghbtns.com -->
-      <!-- <iframe src="http://ghbtns.com/github-btn.html?user=USER&amp;repo=REPO&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe> -->
+      <!-- Right side menu -->
     </div>
   </div>
 
